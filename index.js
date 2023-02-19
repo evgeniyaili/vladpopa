@@ -7,10 +7,11 @@ import fileUpload from 'express-fileupload'
 import cookieParser from 'cookie-parser'
 import router from './routes/index.js'
 import errorMiddleware from './middleware/errorMiddleware.js'
+import telegram from "node-telegram-bot-api";
 
 
-const TelegramBot = require('node-telegram-bot-api');
-const bot = new TelegramBot(process.env.TOKEN, {polling: true});
+//const TelegramBot = require('node-telegram-bot-api');
+const bot = new telegram(process.env.TOKEN, {polling: true});
 const WAurl = 'https://unrivaled-peony-83c0f1.netlify.app/';
 const PORT = process.env.PORT || 5000
 
